@@ -4,12 +4,13 @@
  * Copyright (c) 2014 Pongstr Ordillo. Licensed under MIT License. 
  * =========================================================================== */
 
+console.log("ESSSS");
 +function ($) { "use strict"; 
 
   var Pongstgrm = function (element, options) {
     this.element  = element
     this.options  = options
-
+ console.log("hola 3");
     return this
   }
 
@@ -326,6 +327,7 @@
     }
 
     function ajaxdata (option) {
+      console.log("AJAX");
       $.ajax({
           url      : option.url
         , cache    : true
@@ -344,11 +346,12 @@
               })
           }
       })
-
+    
       return
     }
 
     switch (options.show) {
+      console.log(options.show);
       case 'liked':
         ajaxdata({
             url : apiurl + 'self/media/liked' + rcount
@@ -378,6 +381,7 @@
       break
 
       default:
+      console.log(options.show);
         ajaxdata({
             url: 'https://api.instagram.com/v1/tags/' + options.show + '/media/recent' + rcount
           , opt: options
@@ -396,7 +400,7 @@
       .attr('data-type', options.show)
       .addClass('pongstagrm row')
 
-
+    console.log("hola");
     options.show !== 'profile' &&
       Pongstgrm.prototype.template.loadmore({
           show:       options.show
@@ -412,7 +416,8 @@
 
 
   Pongstgrm.prototype.start = function () {
-    var option = this.options
+    var option = this.options;
+    console.log("hola 2");
     if (option.accessId !== null || option.accessToken !== null) {
       this.create(); return
     }
@@ -421,10 +426,14 @@
   // PONGSTAGR.AM PLUGIN DEFINITON
   // =============================
   $.fn.pongstgrm = function (option) {
+
+
     var options  = $.extend({}, Pongstgrm.defaults, option)
+console.log("AQUI");
 
     return this.each(function () {
       var media = new Pongstgrm($(this)[0], options)
+console.log("AQUI 2");      
           media.start()
     })
   }
