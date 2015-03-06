@@ -16,8 +16,8 @@ Pongstagr.am is a jQuery plugin that lets you display your Instagram media to yo
  
 <!-- Initialize Javascripts to footer -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
-<script src="/path/to/js/boostrap.js"></script>
-<script src="/path/to/js/pongstagr.am.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="pongstagr.am.js"></script>
 <script>
   $(document).ready(function () {
    
